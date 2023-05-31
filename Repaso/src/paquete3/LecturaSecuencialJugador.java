@@ -105,4 +105,8 @@ public class LecturaSecuencialJugador {
             System.exit(1);
         } // fin de catch
     } // fin del método cerrarArchivo
+
+    public Jugador obtenerJugadorNombre(String nombre) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

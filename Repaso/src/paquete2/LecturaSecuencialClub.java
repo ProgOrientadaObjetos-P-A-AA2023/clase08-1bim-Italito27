@@ -12,7 +12,10 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 import paquete1.Club;
+import paquete1.Jugador;
+import paquete3.LecturaSecuencialJugador;
 
 public class LecturaSecuencialClub {
 
@@ -123,7 +126,22 @@ public class LecturaSecuencialClub {
 
         return cadena;
     }
+    // Verificar si existe el jugador en nuestra data
 
+ public static void verificarJugador(String nombreJugador) {
+
+        String nombreArchivo = "data/jugadores.dat";
+        LecturaSecuencialJugador lectura = new LecturaSecuencialJugador(nombreArchivo);
+        lectura.establecerJugadores();
+
+        Jugador jugador = lectura.obtenerJugadorNombre(nombreJugador);
+        if (jugador != null) {
+            System.out.println("Si se encuentra registrado");
+        } else {
+            System.out.println("No se encuentra registrado");
+        }
+        lectura.cerrarArchivo();
+    }
     // cierra el archivo y termina la aplicación
     public void cerrarArchivo() {
         try // cierra el archivo y sale
